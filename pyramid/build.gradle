@@ -26,7 +26,9 @@ android {
         } else if (os.contains("linux")) {
             buildPython("/usr/bin/python3") // GitHub Actions Linux 环境
         } else if (os.contains("mac")) {
-         
+            buildPython("/usr/local/bin/python3") // macOS 环境
+        }
+        
             pip {
                 install "lxml"
                 install "ujson"
