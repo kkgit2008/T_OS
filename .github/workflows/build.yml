@@ -70,7 +70,7 @@ jobs:
         working-directory: ${{ env.ANDROID_DIR }}
         run: |
           build_type=${{ matrix.build_type }}
-          ./gradlew assemble${build_type^}
+          ./gradlew assemble${build_type^} --stacktrace --info
 
       - name: Show apk paths
         run: |
