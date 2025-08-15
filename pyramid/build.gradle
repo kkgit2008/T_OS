@@ -17,18 +17,8 @@ android {
             abiFilters "armeabi-v7a"
         }
         python {
-            //buildPython("D:/Programs/Python/Python38/python.exe")
+            buildPython("D:/Programs/Python/Python38/python.exe")
 
-        // 根据环境自动设置 Python 路径
-        def os = System.getProperty("os.name").toLowerCase()
-        if (os.contains("windows")) {
-            buildPython("D:/Programs/Python/Python38/python.exe") // 本地 Windows 路径
-        } else if (os.contains("linux")) {
-            buildPython("/usr/bin/python3") // GitHub Actions Linux 环境
-        } else if (os.contains("mac")) {
-            buildPython("/usr/local/bin/python3") // macOS 环境
-        }
-        
             pip {
                 install "lxml"
                 install "ujson"
