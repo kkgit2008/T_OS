@@ -9,7 +9,7 @@ android {
         applicationId 'com.github.tvbox.osc'
         targetSdkVersion 28
         versionCode 1
-        versionName '1.0.0'
+        versionName '1.0.1'
         multiDexEnabled true
         //设置room的Schema的位置
         javaCompileOptions {
@@ -30,12 +30,12 @@ android {
             minSdkVersion 16
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        python {
-            dimension "mode"
-            // 配置Python打包特有的设置（如有需要）
-            minSdkVersion 19
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', 'proguard-python.pro'
-        }
+//        python {
+//            dimension "mode"
+//            // 配置Python打包特有的设置（如有需要）
+//            minSdkVersion 19
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', 'proguard-python.pro'
+//        }
     }
 
     buildTypes {
@@ -48,7 +48,8 @@ android {
             }
         }
         release {
-            minifyEnabled true
+            minifyEnabled false//minifyEnabled true
+            shrinkResources true//null
 
             ndk {
                 //noinspection ChromeOsAbiSupport
@@ -118,7 +119,7 @@ dependencies {
 
     implementation project(":player")
     implementation project(":quickjs")
-    pythonImplementation project(":pyramid")
+//    pythonImplementation project(":pyramid")
 
 
     //implementation 'com.lzy.net:okgo:3.0.4'
