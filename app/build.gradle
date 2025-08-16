@@ -49,7 +49,6 @@ android {
         }
         release {
             minifyEnabled false//minifyEnabled true
-            shrinkResources true//null
 
             ndk {
                 //noinspection ChromeOsAbiSupport
